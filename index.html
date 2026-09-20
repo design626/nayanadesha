@@ -129,6 +129,25 @@ body {
     gap: 10px;
     margin-top: 22px;
 }
+    .contact-btn {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #111111;
+    border: 2px solid #111111;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-btn:hover {
+    background: #111111;
+    color: #ffffff;
+}
 
 .btn {
     flex: 1;
@@ -217,21 +236,44 @@ body {
 
         </div>
 
-        <div class="buttons">
+        <a class="contact-btn" href="#" onclick="addToContacts(event)">
+    👤 ADD TO CONTACTS
+</a>
 
-            <a class="btn" href="tel:+94778467265">
-                CALL
-            </a>
+<script>
+function addToContacts(event) {
+    event.preventDefault();
 
-            <a class="btn" href="mailto:nayanadesha@anticut.lk">
-                EMAIL
-            </a>
+    const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+FN:NAYANADESHA PRABASHWARA
+N:NAYANADESHA PRABASHWARA;;;;
+ORG:ANTICUT LK (PVT) LTD
+TITLE:Managing Director
+TEL;TYPE=CELL:+94778467265
+EMAIL:nayanadesha@anticut.lk
+ADR;TYPE=WORK:;;No. 626/C/2, Samadhi Mawatha;Heiyanthuduwa;;11618;Sri Lanka
+URL:https://www.anticut.com
+END:VCARD`;
 
-            <a class="btn" href="https://www.anticut.lk/" target="_blank">
-                WEBSITE
-            </a>
+    const blob = new Blob([vcard], {
+        type: "text/vcard;charset=utf-8"
+    });
 
-        </div>
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "Nayanadesha-Prabashwara.vcf";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+}
+</script>
 
         <div class="footer">
             © 2026 ANTI CUT LK (PVT) LTD
