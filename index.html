@@ -7,6 +7,7 @@
 <title>Nayanadesha Prabashwara | ANTI CUT LK</title>
 
 <style>
+
 * {
     margin: 0;
     padding: 0;
@@ -43,7 +44,7 @@ body {
     width: 90px;
     height: 90px;
     object-fit: contain;
-    background: white;
+    background: #ffffff;
     border-radius: 15px;
     padding: 8px;
     margin-bottom: 10px;
@@ -129,7 +130,26 @@ body {
     gap: 10px;
     margin-top: 22px;
 }
-    .contact-btn {
+
+.btn {
+    flex: 1;
+    padding: 13px 8px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #111111;
+    text-align: center;
+}
+
+.btn:hover {
+    background: #333333;
+}
+
+/* Add to Contacts Button */
+
+.contact-btn {
     display: block;
     width: 100%;
     margin-top: 12px;
@@ -142,6 +162,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     text-align: center;
+    transition: 0.2s;
 }
 
 .contact-btn:hover {
@@ -149,26 +170,12 @@ body {
     color: #ffffff;
 }
 
-.btn {
-    flex: 1;
-    padding: 13px 8px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: bold;
-    color: white;
-    background: #111111;
-}
-
-.btn:hover {
-    background: #333333;
-}
-
 .footer {
     font-size: 11px;
     color: #999999;
     margin-top: 20px;
 }
+
 </style>
 </head>
 
@@ -176,10 +183,16 @@ body {
 
 <div class="card">
 
+    <!-- TOP SECTION -->
+
     <div class="top">
 
         <!-- Company Logo -->
-        <img src="logo.png" class="logo" alt="ANTI CUT LK Logo">
+        <img
+            src="logo.png"
+            class="logo"
+            alt="ANTI CUT LK Logo"
+        >
 
         <div class="company">
             ANTICUT LK (PVT) LTD
@@ -187,96 +200,158 @@ body {
 
     </div>
 
+
+    <!-- PROFILE PHOTO -->
+
     <div class="profile-area">
 
-        <!-- Profile Photo -->
-        <img src="profile.jpg" class="profile" alt="Nayanadesha Prabashwara">
+        <img
+            src="profile.jpg"
+            class="profile"
+            alt="Nayanadesha Prabashwara"
+        >
 
     </div>
 
+
+    <!-- CONTENT -->
+
     <div class="content">
+
+        <!-- NAME -->
 
         <div class="name">
             NAYANADESHA PRABASHWARA
         </div>
 
+
+        <!-- DESIGNATION -->
+
         <div class="designation">
             Managing Director
         </div>
 
+
+        <!-- CONTACT INFORMATION -->
+
         <div class="info">
+
+            <!-- Company -->
 
             <div>
                 <span class="icon">🏢</span>
-                <span>ANTICUT LK (PVT) LTD</span>
+
+                <span>
+                    ANTICUT LK (PVT) LTD
+                </span>
             </div>
 
+
+            <!-- Address -->
+
             <div>
+
                 <span class="icon">📍</span>
+
                 <span>
                     No. 626/C/2, Samadhi Mawatha,<br>
                     Heiyanthuduwa, 11618, Sri Lanka
                 </span>
+
             </div>
 
+
+            <!-- Mobile -->
+
             <a href="tel:+94778467265">
+
                 <span class="icon">📞</span>
-                <span>+0094 77 846 7265</span>
+
+                <span>
+                    +0094 77 846 7265
+                </span>
+
             </a>
+
+
+            <!-- Email -->
 
             <a href="mailto:nayanadesha@anticut.lk">
+
                 <span class="icon">✉️</span>
-                <span>nayanadesha@anticut.lk</span>
+
+                <span>
+                    nayanadesha@anticut.lk
+                </span>
+
             </a>
 
-            <a href="https://www.anticut.lk/" target="_blank">
+
+            <!-- Website -->
+
+            <a
+                href="https://www.anticut.lk/"
+                target="_blank"
+            >
+
                 <span class="icon">🌐</span>
-                <span>www.anticut.lk</span>
+
+                <span>
+                    www.anticut.lk
+                </span>
+
             </a>
 
         </div>
 
-        <a class="contact-btn" href="#" onclick="addToContacts(event)">
-    👤 ADD TO CONTACTS
-</a>
 
-<script>
-function addToContacts(event) {
-    event.preventDefault();
+        <!-- MAIN BUTTONS -->
 
-    const vcard =
-`BEGIN:VCARD
-VERSION:3.0
-FN:NAYANADESHA PRABASHWARA
-N:NAYANADESHA PRABASHWARA;;;;
-ORG:ANTICUT LK (PVT) LTD
-TITLE:Managing Director
-TEL;TYPE=CELL:+94778467265
-EMAIL:nayanadesha@anticut.lk
-ADR;TYPE=WORK:;;No. 626/C/2, Samadhi Mawatha;Heiyanthuduwa;;11618;Sri Lanka
-URL:https://www.anticut.com
-END:VCARD`;
+        <div class="buttons">
 
-    const blob = new Blob([vcard], {
-        type: "text/vcard;charset=utf-8"
-    });
+            <a
+                class="btn"
+                href="tel:+94778467265"
+            >
+                CALL
+            </a>
 
-    const url = URL.createObjectURL(blob);
 
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "Nayanadesha-Prabashwara.vcf";
+            <a
+                class="btn"
+                href="mailto:nayanadesha@anticut.lk"
+            >
+                EMAIL
+            </a>
 
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
 
-    URL.revokeObjectURL(url);
-}
-</script>
+            <a
+                class="btn"
+                href="https://www.anticut.lk/"
+                target="_blank"
+            >
+                WEBSITE
+            </a>
+
+        </div>
+
+
+        <!-- ADD TO CONTACTS -->
+
+        <a
+            class="contact-btn"
+            href="contact.vcf"
+        >
+            👤 ADD TO CONTACTS
+        </a>
+
+
+        <!-- FOOTER -->
 
         <div class="footer">
+
             © 2026 ANTI CUT LK (PVT) LTD
+
         </div>
 
     </div>
